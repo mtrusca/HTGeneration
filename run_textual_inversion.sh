@@ -1,0 +1,17 @@
+CUDA_VISIBLE_DEVICES=0 python diffusers/examples/textual_inversion/textual_inversion.py \
+  --pretrained_model_name_or_path="stable-diffusion-v1-5/stable-diffusion-v1-5" \
+  --train_data_dir="/home/pricie/trusca/htr/data/writers.json" \
+  --learnable_property="object" \
+  --placeholder_token="<writer>" \
+  --initializer_token="writer" \
+  --resolution=512 \
+  --train_batch_size=1 \
+  --gradient_accumulation_steps=4 \
+  --max_train_steps=15 \
+  --learning_rate=5.0e-04 \
+  --scale_lr \
+  --lr_scheduler="constant" \
+  --lr_warmup_steps=0 \
+  --output_dir="/home/local/maria/htr/output_textual_inversion" \
+  --temporal_image_directory='/home/pricie/trusca/htr/data/textual_inversion_temp'\
+  --image_directory='/home/local/maria/htr/dataset'
